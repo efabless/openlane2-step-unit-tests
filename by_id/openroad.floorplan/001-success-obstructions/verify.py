@@ -19,8 +19,8 @@ class VerifyStep(OdbpyStep):
             "Obstructions applied at floorplanning stage. These affect row generation and hence affects cells placement.",
             units="µm",
         ),
+    ]
 
-            ]
     def get_script_path(self):
         return os.path.join(os.path.abspath(os.path.dirname(__file__)), "verify-odb.py")
 
