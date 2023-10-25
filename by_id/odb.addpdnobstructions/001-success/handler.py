@@ -2,7 +2,7 @@ from importlib import reload
 import verify
 
 reload(verify)
-from verify import VerifyStep
+from verify import VerifyStep # noqa: E402
 
 
 def handle(step):
