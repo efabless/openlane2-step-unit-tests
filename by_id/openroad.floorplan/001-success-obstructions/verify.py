@@ -1,6 +1,6 @@
 import os
 
-from typing import List, Literal, Optional, Tuple
+from typing import List, Optional, Tuple
 from decimal import Decimal
 
 from openlane.steps.odb import OdbpyStep
