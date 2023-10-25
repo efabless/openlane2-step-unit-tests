@@ -1,7 +1,8 @@
 from importlib import reload
 import verify
+
 reload(verify)
-from verify import VerifyStep # noqa: E402
+from verify import VerifyStep  # noqa: E402
 
 
 def handle(step):
