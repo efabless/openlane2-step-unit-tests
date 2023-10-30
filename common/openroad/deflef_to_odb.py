@@ -26,12 +26,16 @@ def process_input(state_in, config, step_cls, pdk_root):
     for lef in tlef_list + config_parsed["CELL_LEFS"]:
         lef_reads += f"read_lef {lef}; "
 
-    with open("openroad_def2gds.tcl", "w", encoding="utf8") as f:
+    with open("openroad_def2odb.tcl", "w", encoding="utf8") as f:
         f.write(f"{lef_reads} read_def {def_in}; write_db {odb_out};")
 
-    subprocess.check_output(
-        ["openroad", "-exit", "openroad_def2gds.tcl"],
-        stderr=subprocess.STDOUT,
-    )
+    try:
+        subprocess.check_output(
+            ["openroad", "-exit", "openroad_def2odb.tcl"],
+            stderr=subprocess.STDOUT,
+        )
+    except subprocess.CalledProcessError as e:
+        print(e.stdout)
+        raise e from None
 
     return state_in, config_parsed
