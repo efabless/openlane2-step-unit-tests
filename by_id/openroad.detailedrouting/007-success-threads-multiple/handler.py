@@ -1,1 +1,1 @@
-/home/karim/work/openlane2/test/steps/all/by_id/openroad.detailedrouting/006-success-threads-single/handler.py
+../006-success-threads-single/handler.py
