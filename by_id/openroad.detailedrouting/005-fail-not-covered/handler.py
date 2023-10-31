@@ -1,7 +1,5 @@
 import re
 
-from openlane.steps.checker import TrDRC
-
 
 def handle(step, exception, caplog):
     assert exception is not None, "Detalied router didn't raise an exception"
