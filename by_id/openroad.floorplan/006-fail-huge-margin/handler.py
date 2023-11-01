@@ -7,8 +7,6 @@ def handle(step, exception, caplog):
     error_match = [
         match
         for match in caplog.text.split("\n")
-        if re.match(
-            r"\[ERROR STA-0414\].*is not a positive float.*", match
-        )
+        if re.match(r"\[ERROR STA-0414\].*is not a positive float.*", match)
     ]
     assert error_match != [], "Error STA-0414 not found"
