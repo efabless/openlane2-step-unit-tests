@@ -2,7 +2,6 @@ from typing import Optional, Tuple
 from decimal import Decimal
 
 
-from openlane.steps.tclstep import TclStep
 from openlane.config.variable import Variable
 from openlane.common import GenericDict
 
