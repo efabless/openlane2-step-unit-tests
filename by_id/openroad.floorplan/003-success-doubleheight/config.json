@@ -10,7 +10,7 @@
         "sky130_fd_sc_hd__decap_4",
         "sky130_fd_sc_hd__decap_3"
     ],
-    "FALLBACK_SDC_FILE": "dir::base.sdc",
+    "FALLBACK_SDC_FILE": "./base.sdc",
     "FILL_CELL": [
         "sky130_fd_sc_hd__fill*"
     ],
@@ -52,7 +52,7 @@
     "RT_MAX_LAYER": "met5",
     "PNR_SDC_FILE": null,
     "PDN_MACRO_CONNECTIONS": null,
-    "DIE_AREA": "0 0 34.5 57.12",
+    "DIE_AREA": null,
     "GRT_LAYER_ADJUSTMENTS": [
         0.99,
         0,
@@ -80,7 +80,7 @@
         "max_*": "pdk_dir::libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef"
     },
     "FP_IO_VLAYER": "met2",
-    "FP_SIZING": "absolute",
+    "FP_SIZING": "relative",
     "LEFT_MARGIN_MULT": 12,
     "CELL_LEFS": [
         "pdk_dir::libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef",
@@ -99,7 +99,7 @@
     "CLOCK_PERIOD": 10,
     "SYNTH_CLK_DRIVING_CELL": null,
     "TIME_DERATING_CONSTRAINT": 5,
-    "CLOCK_PORT": null,
+    "CLOCK_PORT": "clk",
     "CTS_CLK_BUFFERS": [
         "sky130_fd_sc_hd__clkbuf_8",
         "sky130_fd_sc_hd__clkbuf_4",
@@ -123,8 +123,11 @@
     ],
     "GND_NETS": null,
     "WIRE_LENGTH_THRESHOLD": null,
+    "FP_OBSTRUCTIONS": null,
     "RIGHT_MARGIN_MULT": 12,
-    "EXTRA_VERILOG_MODELS": null,
+    "EXTRA_VERILOG_MODELS": [
+        "./dummy_doubleheight.bb.v"
+    ],
     "CTS_ROOT_BUFFER": "sky130_fd_sc_hd__clkbuf_16",
     "CELL_GDS": [
         "pdk_dir::libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds"
@@ -135,7 +138,7 @@
     "FP_ASPECT_RATIO": 1,
     "CLOCK_WIRE_RC_LAYER": "met5",
     "FP_CONTEXT_LEF": null,
-    "DESIGN_NAME": "inverter",
+    "DESIGN_NAME": "spm",
     "SYNTH_BUFFER_CELL": "sky130_fd_sc_hd__buf_2/A/X",
     "GPIO_PADS_VERILOG": [
         "pdk_dir::libs.ref/sky130_fd_io/verilog/sky130_ef_io.v"
@@ -143,7 +146,9 @@
     "DEFAULT_MAX_TRAN": null,
     "GND_PIN": "VGND",
     "MACROS": null,
-    "EXTRA_LEFS": null,
+    "EXTRA_LEFS": [
+        "./dummy_doubleheight.lef"
+    ],
     "CELL_BB_VERILOG_MODELS": [
         "pdk_dir::libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd__blackbox.v",
         "pdk_dir::libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd__blackbox_pp.v"
@@ -176,8 +181,11 @@
     "VDD_PIN": "VPWR",
     "OUTPUT_CAP_LOAD": 33.442,
     "LEC_ENABLE": false,
+    "EXTRA_SITES": [
+        "unithddbl"
+    ],
     "meta": {
-        "openlane_version": "2.0.0b14",
+        "openlane_version": "2.0.0b15",
         "step": "OpenROAD.Floorplan"
     }
 }
