@@ -7,5 +7,3 @@ def handle(step, exception, caplog):
     matches = [match for match in caplog.text.split("\n") if re.match(error, match)]
 
     assert matches != [], f"Did not find '{error}' in the log"
-
-
