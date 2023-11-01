@@ -16,6 +16,8 @@
     "json_h": null,
     "metrics": {
         "design__die__area": 11327.4,
-        "design__core__area": 8092.76
+        "design__core__area": 8092.76,
+        "design__die__bbox": "0.0 0.0 101.205 111.925",
+        "design__core__bbox": "5.52 10.88 95.68 100.64"
     }
 }
