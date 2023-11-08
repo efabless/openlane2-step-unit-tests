@@ -31,7 +31,9 @@ def process_input(state_in, config, step_cls, pdk_root):
             for macro in config_parsed["MACROS"].keys()
             for lef in config_parsed["MACROS"][macro].lef
         ]
-    for lef in tlef_list + config_parsed["CELL_LEFS"] + extra_lefs + macros_lefs:
+    lefs = tlef_list + config_parsed["CELL_LEFS"] + extra_lefs + macros_lefs
+    lefs = filter(lambda x: x != "__openlane_dummy_path", lefs)
+    for lef in lefs:
         lef_reads += f"read_lef {lef}; "
 
     with open("openroad_def2gds.tcl", "w", encoding="utf8") as f:
