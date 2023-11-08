@@ -23,7 +23,7 @@ def process_input(state_in, config, step_cls, pdk_root):
             break
 
     lef_reads = ""
-    for lef in tlef_list + config_parsed["CELL_LEFS"]:
+    for lef in tlef_list + config_parsed["CELL_LEFS"] + config_parsed["EXTRA_LEFS"]:
         lef_reads += f"read_lef {lef}; "
 
     with open("openroad_def2gds.tcl", "w", encoding="utf8") as f:
