@@ -10,8 +10,8 @@ def handle(step):
             lib = step.config["LIB"]["*_tt_025C_1v80"][0]
             f.write(f"read_liberty {lib}\n")
             f.write(f"read_verilog {step.state_out['nl']}\n")
-            f.write(f"read_verilog ./aes_example.v\n")
-            f.write(f"link_design user_project_wrapper\n")
+            f.write("read_verilog ./aes_example.v\n")
+            f.write("link_design user_project_wrapper\n")
             f.write(f"read_spef {spef_file}\n")
             f.write(f"read_spef -path mprj ./aes_example.{corner}.spef\n")
             f.write("report_parasitic_annotation -report_unannotated > out.log\n")
