@@ -30,7 +30,9 @@ def handle(step):
         result = subprocess.run(
             ["sta", "-exit", "run_sta.tcl"],
             stderr=subprocess.STDOUT,
+            encoding="utf8",
         )
+        print(result.stdout)
         assert result.returncode == 0, f"Error encounted during reading {spef_file}"
 
         print("=== Running Check ===")
@@ -47,4 +49,5 @@ def handle(step):
             stderr=subprocess.STDOUT,
             env=env,
         )
+        print(result.stdout)
         assert result.returncode == 0, "Some nets were not properly annotated"
