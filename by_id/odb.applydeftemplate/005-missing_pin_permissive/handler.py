@@ -2,7 +2,7 @@ import os
 import subprocess
 
 
-def handle(step, exception):
+def handle(step):
     result = subprocess.call(
         [
             "grep",
