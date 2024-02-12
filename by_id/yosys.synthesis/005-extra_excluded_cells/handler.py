@@ -12,8 +12,6 @@ def handle(step, test):
             "sky130_fd_sc_hd__mux2_"
         ), "EXTRA_EXCLUDED_CELLS did not work properly"
 
-    shutil.copy(json_path, "/Users/donn")
-
     if "synlig" in test:
         result = subprocess.call(
             ["grep", "UHDM", os.path.join(step.step_dir, "yosys-synthesis.log")]
