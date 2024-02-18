@@ -1,6 +1,6 @@
 def handle(step, exception, caplog):
     assert (
-        "No outputs of instance 'ff' are connected- add it to IGNORE_DISCONNECTED_MODULES if this is intentional"
+        "No outputs of macro/instance 'ff' are connected- add it to IGNORE_DISCONNECTED_MODULES if this is intentional"
         in caplog.text
     ), "Did not warn about outputs of instance being unused"
     assert (
