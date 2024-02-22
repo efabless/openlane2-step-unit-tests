@@ -1,4 +1,4 @@
-def handle(step, exception, caplog):
+def handle(step, caplog):
     assert (
         "No outputs of macro/instance 'ff' are connected- add it to IGNORE_DISCONNECTED_MODULES if this is intentional"
         in caplog.text
