@@ -127,7 +127,7 @@
     "CLOCK_UNCERTAINTY_CONSTRAINT": 0.25,
     "DESIGN_NAME": "aes_core",
     "GND_NETS": null,
-    "NETGEN_INCLUDE_MARCO_NETLIST": true,
+    "NETGEN_INCLUDE_MARCO_NETLISTS": true,
     "ENDCAP_CELL": "sky130_fd_sc_hd__decap_3",
     "DATA_WIRE_RC_LAYER": "met2",
     "FP_IO_HLAYER": "met3",
