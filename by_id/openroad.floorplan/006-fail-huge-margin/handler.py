@@ -1,6 +1,3 @@
-import re
-
-
 def handle(step, exception, caplog, openroad_alerts):
     assert exception is not None, "Didn't fail on negative core margin"
     error = "STA-0414"
