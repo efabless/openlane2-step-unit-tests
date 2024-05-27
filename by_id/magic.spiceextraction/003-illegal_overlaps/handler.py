@@ -1,6 +1,3 @@
-import subprocess
-
-
 def handle(step):
     illegal_overlap_count = step.state_out.metrics["magic__illegal_overlap__count"]
     assert (
