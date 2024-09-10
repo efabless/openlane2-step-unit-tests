@@ -3,7 +3,7 @@
     "pnl": null,
     "pnl-sdf-friendly": null,
     "pnl-npc": null,
-    "def": "./xtea.def",
+    "def": "./xtea.def.gz",
     "lef": null,
     "openroad-lef": null,
     "odb": "./xtea.odb",
