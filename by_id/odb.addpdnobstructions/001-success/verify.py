@@ -26,7 +26,7 @@ class VerifyStep(OdbpyStep):
         if obstructions := self.config[self.config_vars[0].name]:
             for obstruction in obstructions:
                 command.append("--obstructions")
-                command.append(obstruction)
+                command.append(" ".join([str(o) for o in obstruction]))
         return command
 
     def run(self, state_in, **kwargs) -> Tuple[ViewsUpdate, MetricsUpdate]:
