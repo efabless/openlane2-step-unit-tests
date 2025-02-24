@@ -1,13 +1,12 @@
-def handle(step, exception):
-    from openlane.scripts.odbpy.exception_codes import METAL_LAYER_ERROR
-    from openlane.steps.step import StepError
+import re
 
-    assert (
-        type(exception) == StepError
-    ), "StepError not thrown. Probably something went very wrong"
-    assert (
-        exception.underlying_error
-    ), "Underlying error not defined. Probably something went very wrong"
-    assert (
-        exception.underlying_error.args[0] == METAL_LAYER_ERROR
-    ), "Different exception caught"
+
+def handle(step, exception):
+    assert len(step.alerts), "No alerts extracted from log"
+    found = False
+    rx = re.compile(r"Layer '\w+' not found")
+    for alert in step.alerts:
+        if alert.cls == "error" and rx.search(alert.message) is not None:
+            found = True
+            break
+    assert found, f"No OpenROAD alerts found matching {rx}"
